@@ -1,10 +1,10 @@
 package com.kodilla.testing.collection;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class CollectionTestSuite {
@@ -20,12 +20,13 @@ public class CollectionTestSuite {
     }
 
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
         OddNumbersExterminator ext = new OddNumbersExterminator();
         ArrayList<Integer> newList = new ArrayList<Integer>(0);
-        ArrayList oddList = ext.exterminate(newList);
-        System.out.println("Metoda zwraca listę o wielkości " + oddList.size());
-
+        ArrayList<Integer> oddList = ext.exterminate(newList);
+        System.out.println("Metoda1 zwraca listę o wielkości " + oddList.size());
+    //Then
+        Assert.assertEquals(oddList.size(), 0);
     }
 
     @Test
@@ -36,7 +37,15 @@ public class CollectionTestSuite {
             newList2.add(k);
         }
         System.out.println("Lista główna ma wielkość: " + newList2.size());
-        ArrayList oddList = ext2.exterminate(newList2);
-        System.out.println("Metoda zwraca listę o wielkości " + oddList.size());
+        ArrayList <Integer> oddList = ext2.exterminate(newList2);
+        System.out.println("Metoda 2 zwraca listę o wielkości " + oddList.size());
+
+    //Then
+        for(Integer temp: oddList){
+            int temp2 = temp % 2;
+            Assert.assertEquals(temp2, 0);
+        }
     }
+
+
 }
