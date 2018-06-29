@@ -1,3 +1,4 @@
+
 package com.kodilla.testing.collection;
 
 import org.junit.After;
