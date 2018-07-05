@@ -40,10 +40,12 @@ public class ShapeCollectorTestSuite {
     public void testGetFig(){
             //G
         Shape circle = new Circle(5);
+        Shape triangle = new Shape(1,3);
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFig(circle);
+        shapeCollector.addFig(triangle);
             //W
-        int bringFig = shapeCollector.getFig().size();
+        int bringFig = shapeCollector.getFig(1).size();
             //T
         Assert.assertEquals(0, bringFig);
     }
