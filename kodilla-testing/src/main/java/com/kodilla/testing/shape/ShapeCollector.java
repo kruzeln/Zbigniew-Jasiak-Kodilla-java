@@ -19,6 +19,10 @@ public class ShapeCollector {
         return figures.get(n);
     }
 
+    public ArrayList<Shape> getFigures() {
+        return figures;
+    }
+
     public void showFig(){
         for(Shape figure: figures){
             System.out.println(figure.getShapeName() + "field: " + figure.getField());

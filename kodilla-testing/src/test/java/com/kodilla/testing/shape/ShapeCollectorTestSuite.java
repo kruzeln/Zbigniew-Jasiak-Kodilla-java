@@ -1,5 +1,5 @@
 package com.kodilla.testing.shape;
-
+import com.kodilla.testing.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,7 +19,8 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFig(triangle);
             shapeCollector.addFig(square);
             //T
-            Assert.assertEquals(3, shapeCollector.getFig().size());
+
+            Assert.assertEquals(3, shapeCollector.getFigures().size());
         }
             @Test
 
@@ -33,21 +34,21 @@ public class ShapeCollectorTestSuite {
             //W
                 shapeCollector.removeFig(circle);
             //T
-                Assert.assertEquals(1, shapeCollector.getFig().size());
+                Assert.assertEquals(1, shapeCollector.getFigures().size());
             }
 
             @Test
     public void testGetFig(){
             //G
         Shape circle = new Circle(5);
-        Shape triangle = new Shape(1,3);
+        Shape triangle = new Triangle(1,3);
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFig(circle);
         shapeCollector.addFig(triangle);
             //W
-        int bringFig = shapeCollector.getFig(1).size();
+        Shape bringFig = shapeCollector.getFig(1);
             //T
-        Assert.assertEquals(0, bringFig);
+        Assert.assertEquals(triangle, bringFig);
     }
 
 
